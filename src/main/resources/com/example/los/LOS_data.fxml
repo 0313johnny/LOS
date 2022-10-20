@@ -57,12 +57,12 @@
         </VBox>
         <VBox prefHeight="600.0" prefWidth="830.0" HBox.hgrow="ALWAYS">
             <children>
-            <Label text="Connect Tab">
+            <Label text="Data tab">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
                 <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
                     <children>
                         <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="2.57Mbps" HBox.hgrow="ALWAYS">

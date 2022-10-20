@@ -56,9 +56,9 @@
   <children>
       <VBox maxWidth="72.0" minWidth="72.0" prefHeight="600.0" prefWidth="90.0">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="72.0" prefWidth="72.0" text="Login" />
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="72.0" prefWidth="72.0" text="Connect" />
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="72.0" prefWidth="72.0" text="Data" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showMainWindow" prefHeight="72.0" prefWidth="72.0" text="Login" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showConnectWindow" prefHeight="72.0" prefWidth="72.0" text="Connect" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showDataWindow" prefHeight="72.0" prefWidth="72.0" text="Data" />
             <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showSettingWindow" prefHeight="72.0" prefWidth="72.0" text="Setting" />
          </children>
@@ -89,9 +89,9 @@
                            <font>
                               <Font size="18.0" />
                            </font></Label>
-                        <TextField layoutX="215.0" layoutY="242.0" prefHeight="23.0" prefWidth="134.0" />
-                        <PasswordField layoutX="215.0" layoutY="291.0" prefHeight="23.0" prefWidth="134.0" />
-                        <Button layoutX="130.0" layoutY="335.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="137.0" text="Verify" />
+                        <TextField fx:id="userInput" layoutX="215.0" layoutY="242.0" prefHeight="23.0" prefWidth="134.0" />
+                        <PasswordField fx:id="passwordInput" layoutX="215.0" layoutY="291.0" prefHeight="23.0" prefWidth="134.0" />
+                        <Button defaultButton="true" layoutX="130.0" layoutY="335.0" mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="39.0" prefWidth="137.0" text="Verify" />
                      </children>
                   </AnchorPane>
                </children>

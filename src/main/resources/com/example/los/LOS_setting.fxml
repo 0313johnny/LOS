@@ -44,13 +44,13 @@
 
 <!-- 把JavaFX版本號拔掉以避免不停出現警告 -->
 
-<HBox minHeight="400.0" prefHeight="600.0" prefWidth="900.0" stylesheets="@LOS_main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.los.LOS_Controller">
+<HBox minHeight="400.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@LOS_main.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.los.LOS_Controller">
    <children>
       <VBox maxWidth="72.0" minWidth="72.0" prefHeight="600.0" prefWidth="90.0" style="-fx-background-color: #13334c;">
          <children>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="72.0" prefWidth="72.0" text="Login" />
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="72.0" prefWidth="72.0" text="Connect" />
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="72.0" prefWidth="72.0" text="Data" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showMainWindow" prefHeight="72.0" prefWidth="72.0" text="Login" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showConnectWindow" prefHeight="72.0" prefWidth="72.0" text="Connect" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showDataWindow" prefHeight="72.0" prefWidth="72.0" text="Data" />
             <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
             <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showSettingWindow" prefHeight="72.0" prefWidth="72.0" text="Setting" />
          </children>

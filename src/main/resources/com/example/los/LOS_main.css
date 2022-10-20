@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'Magarikado';
-    src: url('../resources/fonts/MagarikadoGothic-Regular.otf');
+    font-family: 'LOF Magarikado Gothic';
+    src: url("../../../fonts/MagarikadoGothic-Regular.otf");
 }
 
 @font-face {
-    font-family: 'LogoTypeGothic';
-    src: url('/fonts/LogoTypeGothic.otf');
+    font-family: '07LogoTypeGothic7';
+    src: url("../../../fonts/LogoTypeGothic.otf");
 }
 
 VBox {
@@ -14,8 +14,7 @@ VBox {
 
 .label {
     -fx-text-fill: #f6f6e9;
-    -fx-font-family: "LogoTypeGothic";
-    /*-fx-font-family: "Comic Sans MS";*/
+    -fx-font-family: "LOF Magarikado Gothic";
 }
 
 .button {
