@@ -1,5 +1,6 @@
 package com.example.los;
 
+import com.example.tcp_connect.NettyClient;
 import org.json.*;
 
 import javafx.event.ActionEvent;
@@ -144,5 +145,10 @@ public class LOS_Controller {
                 }
             }
         }
+    }
+
+    public void connectButtonPressed(ActionEvent event) throws IOException {
+        NettyClient LocalServer = new NettyClient();
+        LocalServer.start();
     }
 }
