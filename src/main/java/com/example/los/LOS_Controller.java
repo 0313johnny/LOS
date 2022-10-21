@@ -12,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import tcp_connect.NettyClient;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -147,6 +148,7 @@ public class LOS_Controller {
     }
 
     public void connectButtonPressed(ActionEvent event) throws IOException {
-
+        NettyClient LocalServer = new NettyClient();
+        LocalServer.start();
     }
 }
