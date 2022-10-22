@@ -4,8 +4,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import model.OBSWebsocket;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import model.YoutubeData;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import youtubeAPI.BanObject;
 import youtubeAPI.GetVideoHistoryInfo;
 import youtubeAPI.VoteData;
