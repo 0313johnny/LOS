@@ -37,11 +37,6 @@
         </dependency>
 
         <!-- This dependency is only used for the Topics API sample, which requires the Jackson JSON parser -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.12</version>
-        </dependency>
 
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
