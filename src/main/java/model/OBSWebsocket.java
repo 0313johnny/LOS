@@ -3,7 +3,7 @@ package model;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import youtubeAPI.*;
+import youtubeAPI.VoteAPI;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -137,9 +137,6 @@ public class OBSWebsocket {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-    }
-    public static void startVote(){
-        vote.run();
     }
     public static void main(String[] args) {
         System.out.println(getSceneList());

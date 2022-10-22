@@ -18,14 +18,19 @@ public class NettyClient {
 
     private Integer port = 55302;
 
-    private String host = "127.0.0.1";
-    //private String host = "192.168.100.35";
+    //private String host = "127.0.0.1";
+    private String host = "192.168.100.35";
 
+    private String ytAccount = "00000@gmail.com";
     static private SocketChannel socketChannel;
 
     /**
      * 傳送訊息
      */
+    public void setYtAccount(String ytAccount) {
+        this.ytAccount = ytAccount;
+    }
+
     public void sendMsg(String msg) {
         socketChannel.writeAndFlush(msg);
     }
@@ -44,7 +49,8 @@ public class NettyClient {
             if (future1.isSuccess()) {
                 System.out.println("連線Netty服務端成功");
                 OBSWebsocket obs = new OBSWebsocket();
-                sendMsg("OBSServer " + obs.getSceneList());
+                sendMsg("OBSServer " + ytAccount);
+                sendMsg("addScenes "+obs.getSceneList());
             } else {
                 System.out.println("連線失敗，進行斷線重連");
                 future1.channel().eventLoop().schedule(() -> start(), 20, TimeUnit.SECONDS);

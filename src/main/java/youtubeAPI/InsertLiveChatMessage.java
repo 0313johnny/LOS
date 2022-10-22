@@ -2,6 +2,7 @@ package youtubeAPI;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.util.DateTime;
 import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.YouTubeScopes;
 import com.google.api.services.youtube.model.LiveChatMessage;
@@ -31,8 +32,9 @@ public class InsertLiveChatMessage {
      */
     private static YouTube youtube;
 
+    private static DateTime publishTime;
 
-    public static void InsertLiveChatMessage(String liveChatId,String message) {
+    public void InsertLiveChatMessage(String liveChatId,String message) {
 
         // This OAuth 2.0 access scope allows for write access to the authenticated user's account.
         List<String> scopes = Lists.newArrayList(YouTubeScopes.YOUTUBE_FORCE_SSL);
@@ -64,6 +66,7 @@ public class InsertLiveChatMessage {
             YouTube.LiveChatMessages.Insert liveChatInsert =
                     youtube.liveChatMessages().insert("snippet", liveChatMessage);
             LiveChatMessage response = liveChatInsert.execute();
+            publishTime = response.getSnippet().getPublishedAt();
             System.out.println("Inserted message id " + response.getId());
         } catch (GoogleJsonResponseException e) {
             System.err
@@ -77,5 +80,13 @@ public class InsertLiveChatMessage {
             System.err.println("Throwable: " + t.getMessage());
             t.printStackTrace();
         }
+    }
+
+    public static DateTime getPublishTime() {
+        return publishTime;
+    }
+
+    public static void setPublishTime(DateTime publishTime) {
+        InsertLiveChatMessage.publishTime = publishTime;
     }
 }

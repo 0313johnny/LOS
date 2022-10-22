@@ -1,23 +1,32 @@
 package youtubeAPI;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class VoteResult {
     private Map<String,String> voteResult = new HashMap<>();
 
+    private Map<String, Integer> voteCount = new HashMap<>();
 
-    private Map<String, Integer> voteCount = new HashMap<>();;
+    private String question;
+    private boolean endFlag = false;
 
-    public VoteResult(String options[]) {
-        for(int i = 0;i < options.length ; i++){
-            this.voteCount.put(options[i],0);
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public VoteResult(ArrayList<String> options) {
+        for(int i = 0;i < options.size() ; i++){
+            this.voteCount.put(options.get(i),0);
         }
     }
 
-    public void setVoteCount(String option) {
-        this.voteCount.put(option,0);
-    }
+
 
     public void addVoteCount(String option,int number){
         int oldNumber = this.voteCount.get(option);
@@ -34,5 +43,23 @@ public class VoteResult {
 
     public Map<String, String> getVoteResult() {
         return voteResult;
+    }
+
+    public boolean isEndFlag() {
+        return endFlag;
+    }
+
+    public void setEndFlag(boolean endFlag) {
+        this.endFlag = endFlag;
+    }
+
+    @Override
+    public String toString() {
+        return "VoteResult{" +
+                "voteResult=" + voteResult +
+                ", voteCount=" + voteCount +
+                ", question='" + question + '\'' +
+                ", endFlag=" + endFlag +
+                '}';
     }
 }
