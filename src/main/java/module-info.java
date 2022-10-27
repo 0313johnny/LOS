@@ -18,6 +18,6 @@ module com.example.los {
     requires guava;
     requires google.api.services.youtube.v3.rev222;
 
-    opens com.example.los to javafx.fxml;
-    exports com.example.los;
+    opens los to javafx.fxml;
+    exports los;
 }

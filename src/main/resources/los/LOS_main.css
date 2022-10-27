@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'LOF Magarikado Gothic';
-    src: url("../../../fonts/MagarikadoGothic-Regular.otf");
+    src: url("../fonts/MagarikadoGothic-Regular.otf");
 }
 
 @font-face {
     font-family: '07LogoTypeGothic7';
-    src: url("../../../fonts/LogoTypeGothic.otf");
+    src: url("../fonts/LogoTypeGothic.otf");
 }
 
 VBox {

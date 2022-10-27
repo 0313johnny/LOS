@@ -1,4 +1,4 @@
-package com.example.los;
+package los;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
