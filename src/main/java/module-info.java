@@ -17,6 +17,11 @@ module com.example.los {
     requires com.google.api.client.json.jackson2;
     requires guava;
     requires google.api.services.youtube.v3.rev222;
+    requires logback.classic;
+    requires mongo.java.driver;
+    requires jackson.mapper.asl;
+    requires slf4j.api;
+    requires google.api.services.youtubeAnalytics.v2.rev272;
 
     opens com.example.los to javafx.fxml;
     exports com.example.los;

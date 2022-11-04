@@ -1,5 +1,6 @@
 package com.example.los;
 
+import javafx.scene.control.Button;
 import org.json.*;
 
 import javafx.event.ActionEvent;
@@ -22,6 +23,7 @@ import java.nio.charset.StandardCharsets;
 public class LOS_Controller {
     @FXML private TextField userInput;
     @FXML private PasswordField passwordInput;
+    @FXML private Button tcpConnectBtn;
 
     public void showMainWindow(ActionEvent event) throws IOException {
         FXMLLoader mainLoader = new FXMLLoader(LOS_Application.class.getResource("LOS_main.fxml"));
@@ -127,6 +129,7 @@ public class LOS_Controller {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     msg += line + "\n";
+                    tcpConnectBtn.setDisable(false);
                 }
                 reader.close();
             }
