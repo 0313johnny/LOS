@@ -22,6 +22,7 @@ module com.example.los {
     requires jackson.mapper.asl;
     requires slf4j.api;
     requires google.api.services.youtubeAnalytics.v2.rev272;
+    requires com.fasterxml.jackson.databind;
 
     opens com.example.los to javafx.fxml;
     exports com.example.los;

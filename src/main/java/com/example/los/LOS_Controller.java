@@ -20,6 +20,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 
+import Netty.NettyClient;
+
 public class LOS_Controller {
     @FXML private TextField userInput;
     @FXML private PasswordField passwordInput;
@@ -150,6 +152,7 @@ public class LOS_Controller {
     }
 
     public void connectButtonPressed(ActionEvent event) throws IOException {
-
+        NettyClient LocalServer = new NettyClient();
+        LocalServer.start();
     }
 }

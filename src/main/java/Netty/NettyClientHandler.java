@@ -4,7 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import model.OBSWebsocket;
 import model.YoutubeData;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import youtubeApi.*;
 
 public class NettyClientHandler extends ChannelInboundHandlerAdapter {
