@@ -9,4 +9,8 @@ module com.example.los {
 
     opens los to javafx.fxml;
     exports los;
+    exports los.model;
+    opens los.model to javafx.fxml;
+    exports los.controller;
+    opens los.controller to javafx.fxml;
 }

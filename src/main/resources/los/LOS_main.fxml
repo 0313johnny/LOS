@@ -52,7 +52,7 @@
 
 <!-- 把JavaFX版本號拔掉以避免不停出現警告 -->
 
-<HBox minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@LOS_main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="los.LOS_Controller">
+<HBox minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@LOS_main.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="los.controller.mainController">
   <children>
       <VBox maxWidth="72.0" minWidth="72.0" prefHeight="600.0" prefWidth="90.0">
          <children>
@@ -92,6 +92,11 @@
                         <TextField fx:id="userInput" layoutX="215.0" layoutY="242.0" prefHeight="23.0" prefWidth="134.0" />
                         <PasswordField fx:id="passwordInput" layoutX="215.0" layoutY="291.0" prefHeight="23.0" prefWidth="134.0" />
                         <Button defaultButton="true" layoutX="130.0" layoutY="335.0" mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="39.0" prefWidth="137.0" text="Verify" />
+                        <Label fx:id="loggedInLabel" layoutX="138.0" layoutY="382.0" prefHeight="31.0" prefWidth="122.0" text="Logged In">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </children>

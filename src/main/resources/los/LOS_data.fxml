@@ -44,7 +44,7 @@
 
 <!-- 把JavaFX版本號拔掉以避免不停出現警告 -->
 
-<HBox minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@LOS_main.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="los.LOS_Controller">
+<HBox minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@LOS_main.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="los.controller.mainController">
     <children>
         <VBox maxWidth="72.0" minWidth="72.0" prefHeight="600.0" prefWidth="90.0">
             <children>

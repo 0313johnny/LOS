@@ -1,5 +1,8 @@
-package los;
+package los.controller;
 
+import javafx.scene.control.Label;
+import los.LOS_Application;
+import los.model.mainModel;
 import org.json.*;
 
 import javafx.event.ActionEvent;
@@ -16,9 +19,31 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class LOS_Controller {
+public class mainController {
+    public void LOS_Controller() {};
+
     @FXML private TextField userInput;
     @FXML private PasswordField passwordInput;
+
+    @FXML private Label loggedInLabel;
+    mainModel losModel;
+
+    @FXML
+    public void initialize() {
+        // get model
+        losModel = new mainModel(false);
+        System.out.println("Logged in: " + losModel.isLoggedIn() );
+
+        //link Model with View
+        loggedInLabel.visibleProperty().bind(losModel.loggedInProperty());
+
+        //link Controller to View
+    }
+
+    public void switchScenes(ActionEvent event) throws IOException {
+        // get Text in button of button ID
+        String target = event.getSource().toString();
+    }
 
     public void showMainWindow(ActionEvent event) throws IOException {
         FXMLLoader mainLoader = new FXMLLoader(LOS_Application.class.getResource("LOS_main.fxml"));
@@ -31,6 +56,10 @@ public class LOS_Controller {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(mainScene);
         window.show();
+
+        // binding again
+        loggedInLabel.visibleProperty().bind(losModel.loggedInProperty());
+        //event.consume();
     }
 
     public void showSettingWindow(ActionEvent event) throws IOException {
@@ -44,6 +73,8 @@ public class LOS_Controller {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(settingScene);
         window.show();
+
+        //event.consume();
     }
 
     public void showDataWindow(ActionEvent event) throws IOException {
@@ -57,6 +88,8 @@ public class LOS_Controller {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(mainScene);
         window.show();
+
+        //event.consume();
     }
 
     public void showConnectWindow(ActionEvent event) throws IOException {
@@ -70,6 +103,8 @@ public class LOS_Controller {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(mainScene);
         window.show();
+
+        //event.consume();
     }
 
     public void verifyButtonPressed(ActionEvent event) throws IOException {
@@ -123,6 +158,8 @@ public class LOS_Controller {
                         new InputStreamReader(httpURLConnection.getInputStream(), StandardCharsets.UTF_8));
                 String line;
                 while ((line = reader.readLine()) != null) {
+                    losModel.setLoggedIn(true);
+                    // print
                     msg += line + "\n";
                 }
                 reader.close();
@@ -140,10 +177,14 @@ public class LOS_Controller {
                     System.out.println("httpURLConnection關閉異常："+ e.getLocalizedMessage());
                 }
             }
+
+            System.out.println("Logged in: " + losModel.isLoggedIn());
         }
+
+        event.consume();
     }
 
     public void connectButtonPressed(ActionEvent event) throws IOException {
-
+        event.consume();
     }
 }
